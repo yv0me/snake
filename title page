@@ -21,11 +21,10 @@ font = pygame.font.SysFont(None, 50)
 
 # create a surface object, image is drawn on it.
 imp = pygame.image.load("/Users/y111e/Desktop/cs/snakegame/snake_image.png").convert()
-color=(255,255,255)
+color=(24, 153, 132)
+
 # Create a start button
 text = font.render('START', True, color)
-
-
 
 start_button = pygame.Rect(90, 290, 200, 50)
 button_color = (185, 245, 66)
@@ -38,13 +37,10 @@ pygame.display.flip()
 status = True
 
 while (status):
-    # Adjust text position
-    
-
     # Draw the start button
     pygame.draw.rect(scrn, button_color, start_button)
-    pygame.draw.rect(scrn, (255, 255, 255), start_button, 2)
-    scrn.blit(text, (150, 300))
+    pygame.draw.rect(scrn, (24, 153, 132), start_button, 2)
+    scrn.blit(text, (130, 300))
     # iterate over the list of Event objects
     # that was returned by pygame.event.get() method.
 
