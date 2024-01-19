@@ -21,13 +21,19 @@ font = pygame.font.SysFont(None, 50)
 
 # create a surface object, image is drawn on it.
 imp = pygame.image.load("/Users/y111e/Desktop/cs/snakegame/snake_image.png").convert()
+
 color=(24, 153, 132)
+color2=(245, 191, 12)
 
 # Create a start button
 text = font.render('START', True, color)
-
 start_button = pygame.Rect(90, 290, 200, 50)
 button_color = (185, 245, 66)
+
+# Create a SET button
+text2 = font.render('SETTING', True, color2)
+set_button = pygame.Rect(90, 400, 200, 50)
+button_color2 = (17, 120, 24)
 
 # Using blit to copy content from one surface to other
 scrn.blit(imp, (0, 0))
@@ -41,9 +47,13 @@ while (status):
     pygame.draw.rect(scrn, button_color, start_button)
     pygame.draw.rect(scrn, (24, 153, 132), start_button, 2)
     scrn.blit(text, (130, 300))
+    # Draw the SET button
+    pygame.draw.rect(scrn, button_color2, set_button)
+    pygame.draw.rect(scrn, (245, 191, 12), start_button, 2)
+    scrn.blit(text2, (120, 410))
+
     # iterate over the list of Event objects
     # that was returned by pygame.event.get() method.
-
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
             status = False
