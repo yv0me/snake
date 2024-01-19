@@ -1,0 +1,59 @@
+# importing required library
+import pygame
+import sys
+
+# activate the pygame library .
+pygame.init()
+
+X = 998
+Y = 574
+
+pygame.font.init()
+pygame.font.get_init()
+# create the display surface object
+# of specific dimension..e(X, Y).
+scrn = pygame.display.set_mode((X, Y))
+display_surface = pygame.display.set_mode((998, 574))
+
+# set the pygame window name
+pygame.display.set_caption('The Snake Game')
+font = pygame.font.SysFont(None, 50)
+
+# create a surface object, image is drawn on it.
+imp = pygame.image.load("/Users/y111e/Desktop/cs/snakegame/snake_image.png").convert()
+color=(255,255,255)
+# Create a start button
+text = font.render('START', True, color)
+
+
+
+start_button = pygame.Rect(90, 290, 200, 50)
+button_color = (185, 245, 66)
+
+# Using blit to copy content from one surface to other
+scrn.blit(imp, (0, 0))
+
+# paint screen one time
+pygame.display.flip()
+status = True
+
+while (status):
+    # Adjust text position
+    
+
+    # Draw the start button
+    pygame.draw.rect(scrn, button_color, start_button)
+    pygame.draw.rect(scrn, (255, 255, 255), start_button, 2)
+    scrn.blit(text, (150, 300))
+    # iterate over the list of Event objects
+    # that was returned by pygame.event.get() method.
+
+    for i in pygame.event.get():
+        if i.type == pygame.QUIT:
+            status = False
+
+    pygame.display.flip()
+
+# deactivates the pygame library
+pygame.quit()
+sys.exit()
